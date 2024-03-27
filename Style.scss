@@ -1,0 +1,82 @@
+
+
+// Variabelen
+
+$background-color: #333;
+$text-color: #fff;
+$hero-color: #fff;
+$grid-gap: 20px;
+
+// Mixins
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Basisstijlen
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("https://p0.nicelocal.co.nl/preview/IiBEIXyyfJvp-YDTd4pvug/1120x700x85/1/1/c/original_61585591f049f220dd5ea738_61596c0d9c49a.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  @media only screen and (max-width: 768px) {
+    background-size: contain;
+  }
+}
+
+header {
+  background-color: $background-color;
+  color: $text-color;
+  text-align: center;
+  padding: 1em;
+}
+
+nav ul {
+  color: $text-color;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 10px;
+  color: $text-color;
+}
+
+main {
+  color: $text-color;
+  padding: 20px;
+}
+
+footer {
+  background-color: $background-color;
+  color: $text-color;
+  text-align: center;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.hero {
+  @include center;
+  color: $hero-color;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $grid-gap;
+}
+
+.about-us {
+  margin-top: 20px;
+  color: $text-color;
+}
